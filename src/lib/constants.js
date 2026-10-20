@@ -1,10 +1,10 @@
 export const ROLES = ['seller', 'dealer'];
 
-export const CLOTH_TYPES = ['gamcha_towel', 'bath_towel', 'dhoti', 'lungi', 'bedsheet', 'saree', 'other'];
-
 export const FINISHES = ['raw', 'dyed', 'finished'];
 
 export const UNITS = ['piece', 'kg', 'roll'];
+
+export const SIZE_UNITS = ['inch', 'cm'];
 
 export const GST_STATUS = ['none', 'pending', 'verified', 'rejected'];
 

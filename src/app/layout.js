@@ -22,8 +22,8 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={hindMadurai.variable}>
-      <body>
+    <html lang="en" className={hindMadurai.variable} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <Header />
         {children}
       </body>

@@ -1,12 +1,16 @@
 import mongoose from 'mongoose';
-import { CLOTH_TYPES, FINISHES, REQUIREMENT_STATUS, UNITS } from '@/lib/constants';
+import '@/models/ClothType';
+import { FINISHES, REQUIREMENT_STATUS, SIZE_UNITS, UNITS } from '@/lib/constants';
 
 const requirementSchema = new mongoose.Schema(
   {
     dealer: { type: mongoose.Schema.Types.ObjectId, ref: 'Company', required: true, index: true },
-    clothType: { type: String, enum: CLOTH_TYPES, required: true },
-    clothTypeOther: { type: String, trim: true },
-    size: { type: String, trim: true },
+    clothType: { type: mongoose.Schema.Types.ObjectId, ref: 'ClothType', required: true },
+    size: {
+      width: { type: Number, min: 0 },
+      height: { type: Number, min: 0 },
+      unit: { type: String, enum: SIZE_UNITS, default: 'inch' },
+    },
     colours: [{ type: String, trim: true }],
     finish: { type: String, enum: FINISHES },
     quantity: { type: Number, required: true, min: 1 },

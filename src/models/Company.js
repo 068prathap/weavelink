@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { CLOTH_TYPES, GST_STATUS, PHONE_PATTERN, ROLES } from '@/lib/constants';
+import { GST_STATUS, PHONE_PATTERN, ROLES } from '@/lib/constants';
 import { isValidGstin } from '@/lib/gstin';
 
 const companySchema = new mongoose.Schema(
@@ -33,7 +33,7 @@ const companySchema = new mongoose.Schema(
 
     looms: { type: Number, min: 0 },
     monthlyCapacity: { type: Number, min: 0 },
-    specialities: [{ type: String, enum: CLOTH_TYPES }],
+    specialities: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ClothType' }],
 
     isAdmin: { type: Boolean, default: false },
     isBlocked: { type: Boolean, default: false },
