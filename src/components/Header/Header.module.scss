@@ -1,0 +1,30 @@
+.header {
+  background: var(--indigo);
+  color: var(--white);
+}
+
+.inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+
+  span {
+    color: var(--gold);
+  }
+}
+
+.login {
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius);
+  font-weight: 500;
+}
